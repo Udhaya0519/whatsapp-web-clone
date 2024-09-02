@@ -40,11 +40,16 @@
     margin-top: 20px;
     text-align: center;
 }
-.message-icon{
+.message-icon,
+.user-icon,
+.meta-icon{
     z-index: 2;
     position: relative;
+    cursor: pointer;
 }
-.message-icon::before{
+.message-icon::before,
+.user-icon::before,
+.meta-icon::before{
     content: '';
     background-color: #dadbdf;
     border-radius: 50%;
@@ -54,6 +59,12 @@
     z-index: -1;
     top: -8px;
     left: 0;
+    display: none;
+}
+.message-icon:hover::before,
+.user-icon:hover::before,
+.meta-icon:hover::before{
+    display: block;
 }
 .message-icon::after{
     content: '4';
@@ -267,7 +278,7 @@
 }
 
 .chat-column{
-    height: 585px;
+    height: 580px;
     overflow-x: hidden;
     overflow-y: scroll;
     scrollbar-width: thin;
